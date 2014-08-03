@@ -3,9 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:local="clr-namespace:LibraryManagment.UI"             
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <TextBlock Text="MainContent" />
-    </Grid>
+    <Border BorderThickness="1 0 0 0" 
+            Margin="5 0 0 0"
+            BorderBrush="#FF00AADE">
+        <Grid Margin="5 10 10 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0"
+                   Content="Pole 0" 
+                   />
+            <TextBox Grid.Row="0" Grid.Column="1"/>
+        
+            <Label Grid.Row="1" Grid.Column="0"
+                   Content="Pole 1" 
+                   />
+            <TextBox Grid.Row="1" Grid.Column="1"/>
+
+            <Label Grid.Row="2" Grid.Column="0"
+                   Content="Pole 2" 
+                   />
+            <TextBox Grid.Row="2" Grid.Column="1"/>
+        </Grid>
+    </Border>
 </UserControl>
