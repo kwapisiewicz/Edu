@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exams", "Exams\Exams.csproj", "{61F95164-42BA-411B-AD98-9952CE4571B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exams.Tests", "Exams.Tests\Exams.Tests.csproj", "{61F95164-42BA-411B-AD98-9952CE4571B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exams.Model", "Exams.Model\Exams.Model.csproj", "{1226E291-B32B-4E0B-A76B-3EBDD64CC981}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{61F95164-42BA-411B-AD98-9952CE4571B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61F95164-42BA-411B-AD98-9952CE4571B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61F95164-42BA-411B-AD98-9952CE4571B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1226E291-B32B-4E0B-A76B-3EBDD64CC981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1226E291-B32B-4E0B-A76B-3EBDD64CC981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1226E291-B32B-4E0B-A76B-3EBDD64CC981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1226E291-B32B-4E0B-A76B-3EBDD64CC981}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

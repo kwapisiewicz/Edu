@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exams
+namespace Exams.Model
 {
-    public class Class1
+    public enum QuestionType
     {
+        SingleClause,
+        MultupleClause,
+        Open
     }
 }
