@@ -32,7 +32,7 @@ namespace Exams.Host.Controllers
         [EnableQuery]
         public IQueryable<Question> Get()
         {
-            var toReturn = context.Questions.AsNoTracking()                
+            var toReturn = context.Questions
                 .Include("Answers")
                 .Include("Categories");
                 

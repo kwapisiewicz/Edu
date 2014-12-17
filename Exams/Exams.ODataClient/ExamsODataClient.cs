@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2014-12-17 12:42:54
+// Generation date: 2014-12-17 18:12:54
 namespace Exams.Model
 {
     /// <summary>
@@ -823,6 +823,23 @@ namespace Default
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Category> _Categories;
         /// <summary>
+        /// There are no comments for Answers in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        public global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Answer> Answers
+        {
+            get
+            {
+                if ((this._Answers == null))
+                {
+                    this._Answers = base.CreateQuery<global::Exams.Model.Answer>("Answers");
+                }
+                return this._Answers;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        private global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Answer> _Answers;
+        /// <summary>
         /// There are no comments for Questions in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
@@ -837,6 +854,14 @@ namespace Default
         public void AddToCategories(global::Exams.Model.Category category)
         {
             base.AddObject("Categories", category);
+        }
+        /// <summary>
+        /// There are no comments for Answers in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        public void AddToAnswers(global::Exams.Model.Answer answer)
+        {
+            base.AddObject("Answers", answer);
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
         private abstract class GeneratedEdmModel
@@ -889,9 +914,11 @@ namespace Default
     <Schema Namespace=""Default"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
       <EntityContainer Name=""Container"">
         <EntitySet Name=""Questions"" EntityType=""Exams.Model.Question"">
+          <NavigationPropertyBinding Path=""Answers"" Target=""Answers"" />
           <NavigationPropertyBinding Path=""Categories"" Target=""Categories"" />
         </EntitySet>
         <EntitySet Name=""Categories"" EntityType=""Exams.Model.Category"" />
+        <EntitySet Name=""Answers"" EntityType=""Exams.Model.Answer"" />
       </EntityContainer>
     </Schema>
   </edmx:DataServices>

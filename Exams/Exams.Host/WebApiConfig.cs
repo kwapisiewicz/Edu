@@ -29,6 +29,7 @@ namespace Exams.Host
             ODataModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<Question>("Questions");
             builder.EntitySet<Category>("Categories");
+            builder.EntitySet<Answer>("Answers");
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
                 routePrefix: null,

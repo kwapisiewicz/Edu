@@ -15,19 +15,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Exams.UI
+namespace Exams.UI.Windows
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainView : UserControl
     {
         static string serverUri = @"http://localhost:9000/";
         Container odataContext;
 
         string masterPassword = "abc";
 
-        public MainWindow()
+        public MainView()
         {
             odataContext = new Default.Container(new Uri(serverUri));
             odataContext.SendingRequest2 += SetMasterPasswordHeader;
@@ -59,8 +59,10 @@ namespace Exams.UI
             root.Header = "Questions from " + serverUri;
 
 
-            foreach (var question in odataContext.Questions.Expand("Answers")
-                .Where(a=>a.Categories.Any(b=>b.Name==category)))
+            foreach (var question in odataContext.Questions
+                .Expand("Answers")
+                .Where(a => a.Categories.Any(b => b.Name == category))
+                )
             {
                 var qItem = new TreeViewItem();
                 qItem.Header = string.Format("{0} {1}", question.Text, question.MaxPoints);
@@ -74,7 +76,7 @@ namespace Exams.UI
                         });
                 }
             }
-
+            
             Tree.Items.Add(root);
         }
 

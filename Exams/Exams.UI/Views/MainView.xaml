@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Exams.UI.Windows.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:infrastructure="clr-namespace:Exams.UI.Infrastructure"
+             xmlns:prism="http://www.codeplex.com/prism"
+             Width="525"
+             Height="350">
+    <!--
+        <Grid>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ContentControl x:Name="MainToolbar"
+        prism:RegionManager.RegionName="{x:Static infrastructure:Regions.MainNavigation}" />
+        <ContentControl x:Name="MainControl"
+        Grid.Column="1"
+        Margin="5 5 5 5"
+        prism:RegionManager.RegionName="{x:Static infrastructure:Regions.MainContent}" />
+        <StatusBar Grid.Row="1"
+        Grid.ColumnSpan="2"
+        HorizontalAlignment="Stretch">
+        <WrapPanel>
+        <Button Content="Status bar" />
+        <TextBlock Margin="0 0 0 5"
+        HorizontalAlignment="Right"
+        Text="# Główna " />
+    -->
+    <!--  Style="{StaticResource SubHeaderTextBlockStyle}"  -->
+    <!--
+        <TextBlock Margin="0 0 0 5"
+        HorizontalAlignment="Right"
+        Text=" &gt; Dodaj " />
+    -->
+    <!--  Style="{StaticResource SubHeaderTextBlockStyle}"  -->
+    <!--
+        <TextBlock Margin="0 0 0 5"
+        HorizontalAlignment="Right"
+        Text=" &gt; Nowy " />
+    -->
+    <!--  Style="{StaticResource SubHeaderTextBlockStyle}"  -->
+    <!--
+        </WrapPanel>
+        </StatusBar>
+        </Grid>
+    -->
+
+    <StackPanel>
+        <TreeView x:Name="Tree"
+                  Width="500"
+                  Height="200" />
+        <StackPanel x:Name="Categ" />
+    </StackPanel>
+
+</UserControl>
