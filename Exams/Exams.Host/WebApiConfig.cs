@@ -17,6 +17,7 @@ namespace Exams.Host
         {
             // Configure Web API for self-host. 
             HttpConfiguration config = new HttpConfiguration();
+            config.MessageHandlers.Add(new AuthorizationHandler());
             RegisterOData(config);
 
             appBuilder.UseWebApi(config);
@@ -27,7 +28,6 @@ namespace Exams.Host
             // New code:
             ODataModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<Question>("Questions");
-            builder.EntitySet<Answer>("Answers");
             builder.EntitySet<Category>("Categories");
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",

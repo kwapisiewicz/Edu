@@ -32,20 +32,22 @@ namespace Exams.Host.Controllers
         [EnableQuery]
         public IQueryable<Question> Get()
         {
-            var toReturn = context.Questions
+            var toReturn = context.Questions.AsNoTracking()                
                 .Include("Answers")
                 .Include("Categories");
+                
             return toReturn;
         }
 
         [EnableQuery]
         public SingleResult<Question> Get([FromODataUri] int key)
-        {
+        {            
             IQueryable<Question> result = Get()
                 .Where(p => p.Id == key);
             return SingleResult.Create(result);
         }
 
+        [Authorize(Roles = Roles.Elevated)]
         public async Task<IHttpActionResult> Post(Question question)
         {
             if (!ModelState.IsValid)
@@ -58,6 +60,7 @@ namespace Exams.Host.Controllers
         }
 
         [AcceptVerbs("POST", "PUT")]
+        [Authorize(Roles = Roles.Elevated)]
         public async Task<IHttpActionResult> CreateRef(
             [FromODataUri] int key,
             string navigationProperty,

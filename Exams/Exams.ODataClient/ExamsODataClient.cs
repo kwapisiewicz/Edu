@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 2014-12-09 22:22:02
+// Generation date: 2014-12-17 12:42:54
 namespace Exams.Model
 {
     /// <summary>
@@ -53,7 +53,7 @@ namespace Exams.Model
         /// There are no comments for Categories in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.QuestionCategory> Categories
+        public global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Category> Categories
         {
             get
             {
@@ -63,13 +63,13 @@ namespace Exams.Model
                 }
                 if ((this._Categories == null))
                 {
-                    this._Categories = Context.CreateQuery<global::Exams.Model.QuestionCategory>(GetPath("Categories"));
+                    this._Categories = Context.CreateQuery<global::Exams.Model.Category>(GetPath("Categories"));
                 }
                 return this._Categories;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.QuestionCategory> _Categories;
+        private global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Category> _Categories;
     }
     /// <summary>
     /// There are no comments for Question in the schema.
@@ -216,7 +216,7 @@ namespace Exams.Model
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
         [global::Microsoft.OData.Client.OriginalNameAttribute("Categories")]
-        public global::Microsoft.OData.Client.DataServiceCollection<global::Exams.Model.QuestionCategory> Categories
+        public global::Microsoft.OData.Client.DataServiceCollection<global::Exams.Model.Category> Categories
         {
             get
             {
@@ -231,8 +231,8 @@ namespace Exams.Model
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        private global::Microsoft.OData.Client.DataServiceCollection<global::Exams.Model.QuestionCategory> _Categories = new global::Microsoft.OData.Client.DataServiceCollection<global::Exams.Model.QuestionCategory>(null, global::Microsoft.OData.Client.TrackingMode.None);
-        partial void OnCategoriesChanging(global::Microsoft.OData.Client.DataServiceCollection<global::Exams.Model.QuestionCategory> value);
+        private global::Microsoft.OData.Client.DataServiceCollection<global::Exams.Model.Category> _Categories = new global::Microsoft.OData.Client.DataServiceCollection<global::Exams.Model.Category>(null, global::Microsoft.OData.Client.TrackingMode.None);
+        partial void OnCategoriesChanging(global::Microsoft.OData.Client.DataServiceCollection<global::Exams.Model.Category> value);
         partial void OnCategoriesChanged();
         /// <summary>
         /// This event is raised when the value of the property is changed
@@ -253,171 +253,43 @@ namespace Exams.Model
         }
     }
     /// <summary>
-    /// There are no comments for AnswerSingle in the schema.
+    /// There are no comments for CategorySingle in the schema.
     /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("AnswerSingle")]
-    public partial class AnswerSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<Answer>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("CategorySingle")]
+    public partial class CategorySingle : global::Microsoft.OData.Client.DataServiceQuerySingle<Category>
     {
         /// <summary>
-        /// Initialize a new AnswerSingle object.
+        /// Initialize a new CategorySingle object.
         /// </summary>
-        public AnswerSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+        public CategorySingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
             : base(context, path) {}
 
         /// <summary>
-        /// Initialize a new AnswerSingle object.
+        /// Initialize a new CategorySingle object.
         /// </summary>
-        public AnswerSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+        public CategorySingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
             : base(context, path, isComposable) {}
     }
     /// <summary>
-    /// There are no comments for Answer in the schema.
+    /// There are no comments for Category in the schema.
     /// </summary>
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
     [global::Microsoft.OData.Client.Key("Id")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("Answer")]
-    public partial class Answer : global::System.ComponentModel.INotifyPropertyChanged
+    [global::Microsoft.OData.Client.OriginalNameAttribute("Category")]
+    public partial class Category : global::System.ComponentModel.INotifyPropertyChanged
     {
         /// <summary>
-        /// Create a new Answer object.
-        /// </summary>
-        /// <param name="ID">Initial value of Id.</param>
-        /// <param name="noPoints">Initial value of NoPoints.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        public static Answer CreateAnswer(int ID, int noPoints)
-        {
-            Answer answer = new Answer();
-            answer.Id = ID;
-            answer.NoPoints = noPoints;
-            return answer;
-        }
-        /// <summary>
-        /// There are no comments for Property Id in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Id")]
-        public int Id
-        {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this.OnIdChanging(value);
-                this._Id = value;
-                this.OnIdChanged();
-                this.OnPropertyChanged("Id");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        private int _Id;
-        partial void OnIdChanging(int value);
-        partial void OnIdChanged();
-        /// <summary>
-        /// There are no comments for Property Text in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("Text")]
-        public string Text
-        {
-            get
-            {
-                return this._Text;
-            }
-            set
-            {
-                this.OnTextChanging(value);
-                this._Text = value;
-                this.OnTextChanged();
-                this.OnPropertyChanged("Text");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        private string _Text;
-        partial void OnTextChanging(string value);
-        partial void OnTextChanged();
-        /// <summary>
-        /// There are no comments for Property NoPoints in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        [global::Microsoft.OData.Client.OriginalNameAttribute("NoPoints")]
-        public int NoPoints
-        {
-            get
-            {
-                return this._NoPoints;
-            }
-            set
-            {
-                this.OnNoPointsChanging(value);
-                this._NoPoints = value;
-                this.OnNoPointsChanged();
-                this.OnPropertyChanged("NoPoints");
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        private int _NoPoints;
-        partial void OnNoPointsChanging(int value);
-        partial void OnNoPointsChanged();
-        /// <summary>
-        /// This event is raised when the value of the property is changed
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        /// <summary>
-        /// The value of the property is changed
-        /// </summary>
-        /// <param name="property">property name</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        protected virtual void OnPropertyChanged(string property)
-        {
-            if ((this.PropertyChanged != null))
-            {
-                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for QuestionCategorySingle in the schema.
-    /// </summary>
-    [global::Microsoft.OData.Client.OriginalNameAttribute("QuestionCategorySingle")]
-    public partial class QuestionCategorySingle : global::Microsoft.OData.Client.DataServiceQuerySingle<QuestionCategory>
-    {
-        /// <summary>
-        /// Initialize a new QuestionCategorySingle object.
-        /// </summary>
-        public QuestionCategorySingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
-            : base(context, path) {}
-
-        /// <summary>
-        /// Initialize a new QuestionCategorySingle object.
-        /// </summary>
-        public QuestionCategorySingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
-            : base(context, path, isComposable) {}
-    }
-    /// <summary>
-    /// There are no comments for QuestionCategory in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// Id
-    /// </KeyProperties>
-    [global::Microsoft.OData.Client.Key("Id")]
-    [global::Microsoft.OData.Client.OriginalNameAttribute("QuestionCategory")]
-    public partial class QuestionCategory : global::System.ComponentModel.INotifyPropertyChanged
-    {
-        /// <summary>
-        /// Create a new QuestionCategory object.
+        /// Create a new Category object.
         /// </summary>
         /// <param name="ID">Initial value of Id.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        public static QuestionCategory CreateQuestionCategory(int ID)
+        public static Category CreateCategory(int ID)
         {
-            QuestionCategory questionCategory = new QuestionCategory();
-            questionCategory.Id = ID;
-            return questionCategory;
+            Category category = new Category();
+            category.Id = ID;
+            return category;
         }
         /// <summary>
         /// There are no comments for Property Id in the schema.
@@ -484,6 +356,258 @@ namespace Exams.Model
         }
     }
     /// <summary>
+    /// There are no comments for AnswerSingle in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("AnswerSingle")]
+    public partial class AnswerSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<Answer>
+    {
+        /// <summary>
+        /// Initialize a new AnswerSingle object.
+        /// </summary>
+        public AnswerSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+            : base(context, path) {}
+
+        /// <summary>
+        /// Initialize a new AnswerSingle object.
+        /// </summary>
+        public AnswerSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+            : base(context, path, isComposable) {}
+        /// <summary>
+        /// There are no comments for Score in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        public global::Exams.Model.ScoreSingle Score
+        {
+            get
+            {
+                if (!this.IsComposable)
+                {
+                    throw new global::System.NotSupportedException("The previous function is not composable.");
+                }
+                if ((this._Score == null))
+                {
+                    this._Score = new global::Exams.Model.ScoreSingle(this.Context, GetPath("Score"));
+                }
+                return this._Score;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        private global::Exams.Model.ScoreSingle _Score;
+    }
+    /// <summary>
+    /// There are no comments for Answer in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::Microsoft.OData.Client.Key("Id")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("Answer")]
+    public partial class Answer : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Answer object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        public static Answer CreateAnswer(int ID)
+        {
+            Answer answer = new Answer();
+            answer.Id = ID;
+            return answer;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Id")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Text in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Text")]
+        public string Text
+        {
+            get
+            {
+                return this._Text;
+            }
+            set
+            {
+                this.OnTextChanging(value);
+                this._Text = value;
+                this.OnTextChanged();
+                this.OnPropertyChanged("Text");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        private string _Text;
+        partial void OnTextChanging(string value);
+        partial void OnTextChanged();
+        /// <summary>
+        /// There are no comments for Property Score in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Score")]
+        public global::Exams.Model.Score Score
+        {
+            get
+            {
+                return this._Score;
+            }
+            set
+            {
+                this.OnScoreChanging(value);
+                this._Score = value;
+                this.OnScoreChanged();
+                this.OnPropertyChanged("Score");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        private global::Exams.Model.Score _Score;
+        partial void OnScoreChanging(global::Exams.Model.Score value);
+        partial void OnScoreChanged();
+        /// <summary>
+        /// This event is raised when the value of the property is changed
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// The value of the property is changed
+        /// </summary>
+        /// <param name="property">property name</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for ScoreSingle in the schema.
+    /// </summary>
+    [global::Microsoft.OData.Client.OriginalNameAttribute("ScoreSingle")]
+    public partial class ScoreSingle : global::Microsoft.OData.Client.DataServiceQuerySingle<Score>
+    {
+        /// <summary>
+        /// Initialize a new ScoreSingle object.
+        /// </summary>
+        public ScoreSingle(global::Microsoft.OData.Client.DataServiceContext context, string path)
+            : base(context, path) {}
+
+        /// <summary>
+        /// Initialize a new ScoreSingle object.
+        /// </summary>
+        public ScoreSingle(global::Microsoft.OData.Client.DataServiceContext context, string path, bool isComposable)
+            : base(context, path, isComposable) {}
+    }
+    /// <summary>
+    /// There are no comments for Score in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::Microsoft.OData.Client.Key("Id")]
+    [global::Microsoft.OData.Client.OriginalNameAttribute("Score")]
+    public partial class Score : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Create a new Score object.
+        /// </summary>
+        /// <param name="ID">Initial value of Id.</param>
+        /// <param name="points">Initial value of Points.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        public static Score CreateScore(int ID, int points)
+        {
+            Score score = new Score();
+            score.Id = ID;
+            score.Points = points;
+            return score;
+        }
+        /// <summary>
+        /// There are no comments for Property Id in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Id")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// There are no comments for Property Points in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        [global::Microsoft.OData.Client.OriginalNameAttribute("Points")]
+        public int Points
+        {
+            get
+            {
+                return this._Points;
+            }
+            set
+            {
+                this.OnPointsChanging(value);
+                this._Points = value;
+                this.OnPointsChanged();
+                this.OnPropertyChanged("Points");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        private int _Points;
+        partial void OnPointsChanging(int value);
+        partial void OnPointsChanged();
+        /// <summary>
+        /// This event is raised when the value of the property is changed
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// The value of the property is changed
+        /// </summary>
+        /// <param name="property">property name</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
     /// There are no comments for QuestionType in the schema.
     /// </summary>
     [global::Microsoft.OData.Client.OriginalNameAttribute("QuestionType")]
@@ -525,6 +649,29 @@ namespace Exams.Model
             return new global::Exams.Model.QuestionSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
+        /// Get an entity of type global::Exams.Model.Category as global::Exams.Model.CategorySingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="keys">dictionary with the names and values of keys</param>
+        public static global::Exams.Model.CategorySingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Category> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        {
+            return new global::Exams.Model.CategorySingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
+        /// Get an entity of type global::Exams.Model.Category as global::Exams.Model.CategorySingle specified by key from an entity set
+        /// </summary>
+        /// <param name="source">source entity set</param>
+        /// <param name="id">The value of id</param>
+        public static global::Exams.Model.CategorySingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Category> source,
+            int id)
+        {
+            global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
+            {
+                { "Id", id }
+            };
+            return new global::Exams.Model.CategorySingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+        }
+        /// <summary>
         /// Get an entity of type global::Exams.Model.Answer as global::Exams.Model.AnswerSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
@@ -548,27 +695,27 @@ namespace Exams.Model
             return new global::Exams.Model.AnswerSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
-        /// Get an entity of type global::Exams.Model.QuestionCategory as global::Exams.Model.QuestionCategorySingle specified by key from an entity set
+        /// Get an entity of type global::Exams.Model.Score as global::Exams.Model.ScoreSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
         /// <param name="keys">dictionary with the names and values of keys</param>
-        public static global::Exams.Model.QuestionCategorySingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.QuestionCategory> source, global::System.Collections.Generic.Dictionary<string, object> keys)
+        public static global::Exams.Model.ScoreSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Score> source, global::System.Collections.Generic.Dictionary<string, object> keys)
         {
-            return new global::Exams.Model.QuestionCategorySingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+            return new global::Exams.Model.ScoreSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
         /// <summary>
-        /// Get an entity of type global::Exams.Model.QuestionCategory as global::Exams.Model.QuestionCategorySingle specified by key from an entity set
+        /// Get an entity of type global::Exams.Model.Score as global::Exams.Model.ScoreSingle specified by key from an entity set
         /// </summary>
         /// <param name="source">source entity set</param>
         /// <param name="id">The value of id</param>
-        public static global::Exams.Model.QuestionCategorySingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.QuestionCategory> source,
+        public static global::Exams.Model.ScoreSingle ByKey(this global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Score> source,
             int id)
         {
             global::System.Collections.Generic.Dictionary<string, object> keys = new global::System.Collections.Generic.Dictionary<string, object>
             {
                 { "Id", id }
             };
-            return new global::Exams.Model.QuestionCategorySingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
+            return new global::Exams.Model.ScoreSingle(source.Context, source.GetKeyPath(global::Microsoft.OData.Client.Serializer.GetKeyString(source.Context, keys)));
         }
     }
 }
@@ -659,22 +806,22 @@ namespace Default
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
         private global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Question> _Questions;
         /// <summary>
-        /// There are no comments for Answers in the schema.
+        /// There are no comments for Categories in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        public global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Answer> Answers
+        public global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Category> Categories
         {
             get
             {
-                if ((this._Answers == null))
+                if ((this._Categories == null))
                 {
-                    this._Answers = base.CreateQuery<global::Exams.Model.Answer>("Answers");
+                    this._Categories = base.CreateQuery<global::Exams.Model.Category>("Categories");
                 }
-                return this._Answers;
+                return this._Categories;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        private global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Answer> _Answers;
+        private global::Microsoft.OData.Client.DataServiceQuery<global::Exams.Model.Category> _Categories;
         /// <summary>
         /// There are no comments for Questions in the schema.
         /// </summary>
@@ -684,12 +831,12 @@ namespace Default
             base.AddObject("Questions", question);
         }
         /// <summary>
-        /// There are no comments for Answers in the schema.
+        /// There are no comments for Categories in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
-        public void AddToAnswers(global::Exams.Model.Answer answer)
+        public void AddToCategories(global::Exams.Model.Category category)
         {
-            base.AddObject("Answers", answer);
+            base.AddObject("Categories", category);
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.OData.Client.Design.T4", "2.1.0")]
         private abstract class GeneratedEdmModel
@@ -709,7 +856,14 @@ namespace Default
         <Property Name=""MaxPoints"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Type"" Type=""Exams.Model.QuestionType"" Nullable=""false"" />
         <NavigationProperty Name=""Answers"" Type=""Collection(Exams.Model.Answer)"" />
-        <NavigationProperty Name=""Categories"" Type=""Collection(Exams.Model.QuestionCategory)"" />
+        <NavigationProperty Name=""Categories"" Type=""Collection(Exams.Model.Category)"" />
+      </EntityType>
+      <EntityType Name=""Category"">
+        <Key>
+          <PropertyRef Name=""Id"" />
+        </Key>
+        <Property Name=""Id"" Type=""Edm.Int32"" Nullable=""false"" />
+        <Property Name=""Name"" Type=""Edm.String"" />
       </EntityType>
       <EntityType Name=""Answer"">
         <Key>
@@ -717,14 +871,14 @@ namespace Default
         </Key>
         <Property Name=""Id"" Type=""Edm.Int32"" Nullable=""false"" />
         <Property Name=""Text"" Type=""Edm.String"" />
-        <Property Name=""NoPoints"" Type=""Edm.Int32"" Nullable=""false"" />
+        <NavigationProperty Name=""Score"" Type=""Exams.Model.Score"" />
       </EntityType>
-      <EntityType Name=""QuestionCategory"">
+      <EntityType Name=""Score"">
         <Key>
           <PropertyRef Name=""Id"" />
         </Key>
         <Property Name=""Id"" Type=""Edm.Int32"" Nullable=""false"" />
-        <Property Name=""Name"" Type=""Edm.String"" />
+        <Property Name=""Points"" Type=""Edm.Int32"" Nullable=""false"" />
       </EntityType>
       <EnumType Name=""QuestionType"">
         <Member Name=""SingleClause"" Value=""0"" />
@@ -735,9 +889,9 @@ namespace Default
     <Schema Namespace=""Default"" xmlns=""http://docs.oasis-open.org/odata/ns/edm"">
       <EntityContainer Name=""Container"">
         <EntitySet Name=""Questions"" EntityType=""Exams.Model.Question"">
-          <NavigationPropertyBinding Path=""Answers"" Target=""Answers"" />
+          <NavigationPropertyBinding Path=""Categories"" Target=""Categories"" />
         </EntitySet>
-        <EntitySet Name=""Answers"" EntityType=""Exams.Model.Answer"" />
+        <EntitySet Name=""Categories"" EntityType=""Exams.Model.Category"" />
       </EntityContainer>
     </Schema>
   </edmx:DataServices>

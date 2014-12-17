@@ -10,6 +10,6 @@ namespace Exams.Model
     {
         public int Id { get; set; }
         public string Text { get; set; }
-        public int NoPoints { get; set; }
+        public Score Score { get; set; }
     }
 }
