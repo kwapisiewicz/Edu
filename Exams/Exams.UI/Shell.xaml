@@ -8,6 +8,10 @@
         d:DesignHeight="300"
         d:DesignWidth="300"
         mc:Ignorable="d">
+    <Window.Resources>
+        <SolidColorBrush x:Key="BackgroundKey"
+                         Color="#FFFFFF" />
+    </Window.Resources>
     <ContentControl x:Name="MainWindow"
                     Grid.Column="1"
                     Margin="5 5 5 5"

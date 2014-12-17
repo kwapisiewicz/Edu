@@ -9,8 +9,8 @@
     <StackPanel>
         <TextBlock Margin="0 0 0 5"
                    HorizontalAlignment="Center"
+                   Style="{StaticResource HeaderTextBlockStyle}"
                    Text="Menu" />
-        <!--  Style="{StaticResource HeaderTextBlockStyle}"  -->
         <Button Command="{Binding NavigateCategories}"
                 Content="Kategorie" />
         <Button Command="{Binding NavigateQuestions}"
