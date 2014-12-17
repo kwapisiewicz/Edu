@@ -22,69 +22,9 @@ namespace Exams.UI.Windows
     /// </summary>
     public partial class MainView : UserControl
     {
-        static string serverUri = @"http://localhost:9000/";
-        Container odataContext;
-
-        string masterPassword = "abc";
-
         public MainView()
-        {
-            odataContext = new Default.Container(new Uri(serverUri));
-            odataContext.SendingRequest2 += SetMasterPasswordHeader;
-
+        {           
             InitializeComponent();
-            try
-            {
-                foreach (var item in odataContext.Categories)
-                {
-                    var b = new Button() { Content = item.Name };
-                    b.Click += b_Click;
-                    Categ.Children.Add(b);
-                }
-            }
-            catch(Exception ex)
-            {
-                Console.Write(ex.ToString());
-            }
-        }
-
-        void b_Click(object sender, RoutedEventArgs e)
-        {
-            Fill((string)((Button)sender).Content);
-        }
-
-        private void Fill(string category)
-        {
-            TreeViewItem root = new TreeViewItem();
-            root.Header = "Questions from " + serverUri;
-
-
-            foreach (var question in odataContext.Questions
-                .Expand("Answers")
-                .Where(a => a.Categories.Any(b => b.Name == category))
-                )
-            {
-                var qItem = new TreeViewItem();
-                qItem.Header = string.Format("{0} {1}", question.Text, question.MaxPoints);
-                root.Items.Add(qItem);
-                foreach (var answer in question.Answers)
-                {
-                    qItem.Items.Add(
-                        new TreeViewItem()
-                        {
-                            Header = string.Format("{0} {1}", answer.Text, answer.Score)
-                        });
-                }
-            }
-            
-            Tree.Items.Add(root);
-        }
-
-        void SetMasterPasswordHeader(object sender, Microsoft.OData.Client.SendingRequest2EventArgs e)
-        {
-            e.RequestMessage.SetHeader(
-                "MasterPassword",
-                new Md5PasswordHash().Evaluate(masterPassword));
-        }
+        } 
     }
 }
