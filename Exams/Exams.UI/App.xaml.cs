@@ -13,5 +13,10 @@ namespace Exams.UI
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            new UIBootstrapper().Run();
+            base.OnStartup(e);
+        }
     }
 }
