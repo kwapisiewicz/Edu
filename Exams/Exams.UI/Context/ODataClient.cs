@@ -9,21 +9,28 @@ namespace Exams.UI.Context
 {
     public class ODataClient
     {
-        static string serverUri = @"http://localhost:9000/";
-        static string masterPassword = "abc";
+        private static string serverUri = @"http://localhost:9000/";
+        private static string masterPassword = "abc";
+
+        private LoginContext _loginContext;
+
         public Container Context { get; private set; }
 
-        public ODataClient()
+        public ODataClient(LoginContext loginCuntext)
         {
+            _loginContext = loginCuntext;
             Context = new Default.Container(new Uri(serverUri));
             Context.SendingRequest2 += SetMasterPasswordHeader;
         }
 
         void SetMasterPasswordHeader(object sender, Microsoft.OData.Client.SendingRequest2EventArgs e)
         {
-            e.RequestMessage.SetHeader(
-                "MasterPassword",
-                new Md5PasswordHash().Evaluate(masterPassword));
+            if (_loginContext.UserType==UserType.Teacher)
+            {
+                e.RequestMessage.SetHeader(
+                    "MasterPassword",
+                    _loginContext.PasswordHash);
+            }
         }
     }
 }

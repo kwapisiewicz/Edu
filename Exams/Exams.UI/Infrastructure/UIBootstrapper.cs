@@ -31,7 +31,9 @@ namespace Exams.UI.Infrastructure
 
         protected override void ConfigureContainer()
         {
-            base.Container.Install(new MainWindsorInstaller());
+            base.Container.Install(
+                new InfrastructureInstaller(),
+                new MainWindsorInstaller());
             base.ConfigureContainer();
         }
 

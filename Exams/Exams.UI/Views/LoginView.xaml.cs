@@ -1,4 +1,6 @@
 ﻿using Exams.UI.Infrastructure;
+using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
 using Microsoft.Practices.Prism.Regions;
 using System;
 using System.Collections.Generic;
@@ -22,17 +24,50 @@ namespace Exams.UI.Windows
     /// </summary>
     public partial class LoginView : UserControl
     {
-        IRegionManager _rm;
+        IRegionManager _regionManager;
+        LoginContext _loginContext;
 
-        public LoginView(IRegionManager rm)
+        public LoginView(IRegionManager regionManager, LoginContext loginContext)
         {
-            _rm = rm;
+            _regionManager = regionManager;
+            _loginContext = loginContext;
+
+            DataContext = this;
+            NavigateStudent = new DelegateCommand(LoginStudent);
+            NavigateTeacher = new DelegateCommand(LoginTeacher);
+            PasswordPicker = new InteractionRequest<IConfirmation>();
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public ICommand NavigateStudent { get; set; }
+        public ICommand NavigateTeacher { get; set; }
+
+        public InteractionRequest<IConfirmation> PasswordPicker { get; set; }
+
+        public void LoginStudent()
         {
-            _rm.RequestNavigate(Regions.MainWindow, typeof(MainView).FullName);
+            _loginContext.LoginAsStudent();
+            _regionManager.RequestNavigate(Regions.MainWindow, typeof(MainView).FullName);
+        }
+
+        public void LoginTeacher()
+        {
+            PasswordPicker.Raise(new Confirmation()
+            {
+                Title = "Joł",
+                Content = new TextBox()
+            },
+            r => LoginTeacherCallback(r.Confirmed, r.Content));           
+        }
+
+        public void LoginTeacherCallback(bool confirmed, object content)
+        {
+            if(confirmed)
+            {
+                string pass = ((TextBox)content).Text;
+                _loginContext.LoginAsTeacher(pass);
+                _regionManager.RequestNavigate(Regions.MainWindow, typeof(MainView).FullName);
+            }
         }
     }
 }

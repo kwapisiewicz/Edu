@@ -5,6 +5,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/Office2010Blue.MSControls.Core.Implicit.xaml" />
+                <ResourceDictionary Source="Themes/Office2010Blue.MSControls.Toolkit.Implicit.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <Style x:Key="HeaderTextBlockStyle"

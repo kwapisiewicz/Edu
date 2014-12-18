@@ -15,7 +15,7 @@ namespace Exams.Host
         {
             string baseAddress = "http://localhost:9000/";
             #region
-            Init();
+            //Init();
             #endregion
             HttpClient client = new HttpClient();
 

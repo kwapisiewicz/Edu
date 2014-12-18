@@ -21,13 +21,14 @@ namespace Exams.UI.Views
     /// </summary>
     public partial class CategoriesView : UserControl
     {
-        public CategoriesView()
+        ODataClient _client;
+        public CategoriesView(ODataClient client)
         {
+            _client = client;
             InitializeComponent();
-            ODataClient client = new ODataClient();
             try
             {
-                var cats = client.Context.Categories.ToArray().Select(a => a.Name);
+                var cats = _client.Context.Categories.ToArray().Select(a => a.Name);
                 Categories.ItemsSource = cats;
             }
             catch (Exception ex)

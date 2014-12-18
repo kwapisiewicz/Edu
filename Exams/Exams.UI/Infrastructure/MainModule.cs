@@ -30,11 +30,11 @@ namespace Exams.UI.Infrastructure
             _container.Register(Component.For<NavigationView>().Named(typeof(NavigationView).FullName));
             _container.Register(Component.For<CategoriesView>().Named(typeof(CategoriesView).FullName));
             _container.Register(Component.For<QuestionsView>().Named(typeof(QuestionsView).FullName));
+
             //Starting regions registration
             _regionManager.RegisterViewWithRegion(Regions.MainWindow, typeof(LoginView));
             _regionManager.RegisterViewWithRegion(Regions.MainNavigation, typeof(NavigationView));
             _regionManager.RegisterViewWithRegion(Regions.MainContent, typeof(CategoriesView));
         }
-
     }
 }

@@ -9,7 +9,7 @@ namespace Exams.Model
 {
     public class ExamContext : DbContext
     {
-        public ExamContext() : base("DbTest1")
+        public ExamContext() : base("DbTest2")
         { }
 
         public DbSet<Question> Questions { get; set; }

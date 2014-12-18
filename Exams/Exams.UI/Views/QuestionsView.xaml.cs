@@ -21,8 +21,10 @@ namespace Exams.UI.Views
     /// </summary>
     public partial class QuestionsView : UserControl
     {
-        public QuestionsView()
+        ODataClient _client;
+        public QuestionsView(ODataClient client)
         {
+            _client = client;
             InitializeComponent();
             Fill("A");
         }
@@ -30,11 +32,8 @@ namespace Exams.UI.Views
         private void Fill(string category)
         {
             TreeViewItem root = new TreeViewItem();
-            ODataClient client = new ODataClient();
             root.Header = "Questions";
-
-
-            foreach (var question in client.Context.Questions
+            foreach (var question in _client.Context.Questions
                 .Expand("Answers")
                 //.Where(a => a.Categories.Any(b => b.Name == category))
                 )
