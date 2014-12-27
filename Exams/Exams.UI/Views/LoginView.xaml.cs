@@ -1,4 +1,5 @@
 ﻿using Exams.UI.Infrastructure;
+using Exams.UI.Views;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
 using Microsoft.Practices.Prism.Regions;
@@ -34,15 +35,12 @@ namespace Exams.UI.Windows
 
             DataContext = this;
             NavigateStudent = new DelegateCommand(LoginStudent);
-            NavigateTeacher = new DelegateCommand(LoginTeacher);
-            PasswordPicker = new InteractionRequest<IConfirmation>();
+            NavigateGetTeacherPassword = new DelegateCommand(GetTeacherPassword);
             InitializeComponent();
         }
 
         public ICommand NavigateStudent { get; set; }
-        public ICommand NavigateTeacher { get; set; }
-
-        public InteractionRequest<IConfirmation> PasswordPicker { get; set; }
+        public ICommand NavigateGetTeacherPassword { get; set; }
 
         public void LoginStudent()
         {
@@ -50,24 +48,9 @@ namespace Exams.UI.Windows
             _regionManager.RequestNavigate(Regions.MainWindow, typeof(MainView).FullName);
         }
 
-        public void LoginTeacher()
+        public void GetTeacherPassword()
         {
-            PasswordPicker.Raise(new Confirmation()
-            {
-                Title = "Joł",
-                Content = new TextBox()
-            },
-            r => LoginTeacherCallback(r.Confirmed, r.Content));           
-        }
-
-        public void LoginTeacherCallback(bool confirmed, object content)
-        {
-            if(confirmed)
-            {
-                string pass = ((TextBox)content).Text;
-                _loginContext.LoginAsTeacher(pass);
-                _regionManager.RequestNavigate(Regions.MainWindow, typeof(MainView).FullName);
-            }
+            _regionManager.RequestNavigate(Regions.MainWindow, typeof(PasswordView).FullName);        
         }
     }
 }

@@ -8,19 +8,6 @@
              d:DesignHeight="300"
              d:DesignWidth="300"
              mc:Ignorable="d">
-    <i:Interaction.Triggers>
-        <prism:InteractionRequestTrigger SourceObject="{Binding PasswordPicker, Mode=OneWay}">
-            <prism:PopupWindowAction CenterOverAssociatedObject="True"
-                                     IsModal="True" />
-        </prism:InteractionRequestTrigger>
-    </i:Interaction.Triggers>
-    <UserControl.Resources>
-        <Style x:Key="MainWindowTextBlock"
-               TargetType="TextBlock">
-            <Setter Property="FontSize" Value="40" />
-            <Setter Property="FontFamily" Value="Segoe UI" />
-        </Style>
-    </UserControl.Resources>
     <StackPanel>
         <TextBlock HorizontalAlignment="Center"
                    Foreground="#FF00AADE"
@@ -39,7 +26,7 @@
                            Text="Uczeń" />
             </Button>
             <Button Grid.Column="2"
-                    Command="{Binding NavigateTeacher}">
+                    Command="{Binding NavigateGetTeacherPassword}">
                 <TextBlock HorizontalAlignment="Center"
                            Style="{StaticResource MainWindowTextBlock}"
                            Text="Nauczyciel" />
