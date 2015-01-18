@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Answer.cs" />
     <Compile Include="ExamContext.cs" />
+    <Compile Include="ExamContextInitializer.cs" />
     <Compile Include="Question.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionCategory.cs" />

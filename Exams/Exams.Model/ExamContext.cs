@@ -9,8 +9,10 @@ namespace Exams.Model
 {
     public class ExamContext : DbContext
     {
-        public ExamContext() : base("DbTest2")
-        { }
+        public ExamContext() : base("ExamDatabase")
+        {
+            Database.SetInitializer<ExamContext>(new ExamContextInitializer());
+        }
 
         public DbSet<Question> Questions { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -9,22 +10,20 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Exams.Host
+namespace Exams.Host.Security
 {
-    public static class Roles
-    {
-        public const string Elevated = "Elevated";
-    }
-
     public class AuthorizationHandler : DelegatingHandler
     {
+        private const string MasterPasswordHeader = "MasterPassword";
+        private const string MasterPasswordHashAppConfigKey = "MasterPasswordHash";
+
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, System.Threading.CancellationToken cancellationToken)
         {
-            if(request.Headers.Any(a=>a.Key == "MasterPassword"))
+            if(request.Headers.Any(a=>a.Key == MasterPasswordHeader))
             {
-                var passwordHeader = request.Headers.First(a => a.Key == "MasterPassword");
+                var passwordHeader = request.Headers.First(a => a.Key == MasterPasswordHeader);
                 var passwordHash = passwordHeader.Value.FirstOrDefault();
-                if (passwordHash == "900150983cd24fb0d6963f7d28e17f72")
+                if (passwordHash == ConfigurationManager.AppSettings[MasterPasswordHashAppConfigKey])
                 {
                     IPrincipal principal = new GenericPrincipal(
                         new GenericIdentity(Roles.Elevated),

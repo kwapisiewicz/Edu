@@ -1,4 +1,5 @@
-﻿using Exams.Model;
+﻿using Exams.Host.Security;
+using Exams.Model;
 using Owin;
 using System;
 using System.Collections.Generic;
