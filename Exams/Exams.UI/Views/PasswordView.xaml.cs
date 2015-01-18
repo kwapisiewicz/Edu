@@ -1,4 +1,6 @@
-﻿using Exams.UI.Infrastructure;
+﻿using Exams.Model;
+using Exams.UI.Context;
+using Exams.UI.Infrastructure;
 using Exams.UI.Windows;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Regions;
@@ -25,13 +27,14 @@ namespace Exams.UI.Views
     public partial class PasswordView : UserControl
     {
         IRegionManager _regionManager;
-        IRegionNavigationJournal _journal;
-        LoginContext _loginContext;        
+        LoginContext _loginContext;
+        ODataClient _client;
 
-        public PasswordView(IRegionManager regionManager, LoginContext loginContext)
+        public PasswordView(IRegionManager regionManager, LoginContext loginContext, ODataClient client)
         {
             _regionManager = regionManager;
             _loginContext = loginContext;
+            _client = client;
 
             DataContext = this;
             NavigateTeacher = new DelegateCommand<string>(LoginTeacher);
@@ -50,6 +53,12 @@ namespace Exams.UI.Views
         public void LoginTeacher(string password)
         {
             _loginContext.LoginAsTeacher(password);
+            DecriptiveBool connectionDetails = _client.CheckConnection();
+            if (!connectionDetails.Result)
+            {
+                MessageBox.Show(connectionDetails.Description);
+                return;
+            }
             _regionManager.RequestNavigate(Regions.MainWindow, typeof(MainView).FullName);
         }
     }

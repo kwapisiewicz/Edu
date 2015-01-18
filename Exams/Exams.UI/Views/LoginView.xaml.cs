@@ -1,4 +1,5 @@
-﻿using Exams.UI.Infrastructure;
+﻿using Exams.UI.Context;
+using Exams.UI.Infrastructure;
 using Exams.UI.Views;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
@@ -27,11 +28,13 @@ namespace Exams.UI.Windows
     {
         IRegionManager _regionManager;
         LoginContext _loginContext;
+        ODataClient _client;
 
-        public LoginView(IRegionManager regionManager, LoginContext loginContext)
+        public LoginView(IRegionManager regionManager, LoginContext loginContext, ODataClient client)
         {
             _regionManager = regionManager;
             _loginContext = loginContext;
+            _client = client;
 
             DataContext = this;
             NavigateStudent = new DelegateCommand(LoginStudent);
@@ -45,6 +48,12 @@ namespace Exams.UI.Windows
         public void LoginStudent()
         {
             _loginContext.LoginAsStudent();
+            DecriptiveBool connectionDetails = _client.CheckConnection();
+            if (!connectionDetails.Result)
+            {
+                MessageBox.Show(connectionDetails.Description);
+                return;
+            }
             _regionManager.RequestNavigate(Regions.MainWindow, typeof(MainView).FullName);
         }
 
