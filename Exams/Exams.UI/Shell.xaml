@@ -5,6 +5,7 @@
         xmlns:infrastructure="clr-namespace:Exams.UI.Infrastructure"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:prism="http://www.codeplex.com/prism"
+        FontSize="22"
         d:DesignHeight="300"
         d:DesignWidth="300"
         mc:Ignorable="d">

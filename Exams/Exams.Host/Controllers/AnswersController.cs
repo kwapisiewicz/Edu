@@ -1,5 +1,6 @@
 ﻿using Exams.Host.Security;
 using Exams.Model;
+using Microsoft.OData.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,8 @@ namespace Exams.Host.Controllers
         [EnableQuery]
         public IQueryable<Answer> Get()
         {
-            return context.Answers;
+            return context.Answers
+                .Include("Score");
         }
 
         [EnableQuery]
@@ -80,5 +82,18 @@ namespace Exams.Host.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        [EnableQuery]
+        public IHttpActionResult GetScore([FromODataUri] int key)
+        {
+            Score result = context.Answers.Include("Score")
+                .Where(m => m.Id.Equals(key)).Single()
+                .Score;
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
+        }
     }
 }

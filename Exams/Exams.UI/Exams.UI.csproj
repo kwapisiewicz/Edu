@@ -114,13 +114,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Context\ODataClient.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter.cs" />
     <Compile Include="IHashFunction.cs" />
     <Compile Include="Infrastructure\InfrastructureInstaller.cs" />
     <Compile Include="Infrastructure\MainWindsorInstaller.cs" />
     <Compile Include="LoginContext.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Views\CategoriesView.xaml.cs">
       <DependentUpon>CategoriesView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\QuestionsViewModel.cs" />
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -233,6 +236,10 @@
       <Project>{93cc8f1e-b9af-4071-858f-e9f0ce9431db}</Project>
       <Name>Exams.ODataClient</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\correct.png" />
+    <Resource Include="Images\wrong.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

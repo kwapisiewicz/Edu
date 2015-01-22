@@ -8,6 +8,10 @@
                 <ResourceDictionary Source="Themes/Office2010Blue.MSControls.Toolkit.Implicit.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
+            <BitmapImage x:Key="CorrectImg"
+                         UriSource="Images/correct.png" />
+            <BitmapImage x:Key="WrongImg"
+                         UriSource="Images/wrong.png" />
             <Style x:Key="HeaderTextBlockStyle"
                    TargetType="TextBlock">
                 <Setter Property="FontSize" Value="22" />

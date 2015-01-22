@@ -21,37 +21,13 @@ namespace Exams.UI.Views
     /// </summary>
     public partial class QuestionsView : UserControl
     {
-        ODataClient _client;
-        public QuestionsView(ODataClient client)
+        public QuestionsView(QuestionsViewModel viewModel)
         {
-            _client = client;
+            ViewModel = viewModel;
+            DataContext = this;
             InitializeComponent();
-            Fill("A");
         }
 
-        private void Fill(string category)
-        {
-            TreeViewItem root = new TreeViewItem();
-            root.Header = "Questions";
-            foreach (var question in _client.Context.Questions
-                .Expand("Answers")
-                //.Where(a => a.Categories.Any(b => b.Name == category))
-                )
-            {
-                var qItem = new TreeViewItem();
-                qItem.Header = string.Format("{0} {1}", question.Text, question.MaxPoints);
-                root.Items.Add(qItem);
-                foreach (var answer in question.Answers)
-                {
-                    qItem.Items.Add(
-                        new TreeViewItem()
-                        {
-                            Header = string.Format("{0} {1}", answer.Text, answer.Score)
-                        });
-                }
-            }
-
-            QuestionsTree.Items.Add(root);
-        }   
+        public QuestionsViewModel ViewModel { get; set; }
     }
 }

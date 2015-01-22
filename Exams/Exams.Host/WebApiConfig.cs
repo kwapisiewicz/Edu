@@ -31,6 +31,7 @@ namespace Exams.Host
             builder.EntitySet<Question>("Questions");
             builder.EntitySet<Category>("Categories");
             builder.EntitySet<Answer>("Answers");
+            builder.EntitySet<Score>("Scores");
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
                 routePrefix: null,

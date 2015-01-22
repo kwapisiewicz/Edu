@@ -36,6 +36,9 @@ namespace Exams.UI.Infrastructure
             _regionManager.RegisterViewWithRegion(Regions.MainWindow, typeof(LoginView));
             _regionManager.RegisterViewWithRegion(Regions.MainNavigation, typeof(NavigationView));
             _regionManager.RegisterViewWithRegion(Regions.MainContent, typeof(CategoriesView));
+
+            //View models
+            _container.Register(Component.For<QuestionsViewModel>());
         }
     }
 }
