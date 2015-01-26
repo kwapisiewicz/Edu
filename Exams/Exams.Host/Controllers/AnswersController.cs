@@ -57,7 +57,7 @@ namespace Exams.Host.Controllers
         [AcceptVerbs("POST", "PUT")]
         [Authorize(Roles = Roles.Elevated)]
         public async Task<IHttpActionResult> CreateRef(
-            [FromODataUri] int key,
+            [FromODataUri]   int key,
             string navigationProperty,
             [FromBody] Uri link)
         {

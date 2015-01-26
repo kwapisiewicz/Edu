@@ -9,20 +9,29 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <ContentControl x:Name="MainToolbar"
+        <!--  prism:RegionManager.RegionName="{x:Static infrastructure:Regions.MainToolbar}">  -->
+        <StackPanel x:Name="MainToolbar"
+                    Grid.Column="1"
+                    Height="36"
+                    Margin="0 0 0 4"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal"
+                    prism:RegionManager.RegionName="{x:Static infrastructure:Regions.MainToolbar}" />
+        <ContentControl x:Name="MainNavigation"
+                        Grid.Row="1"
                         prism:RegionManager.RegionName="{x:Static infrastructure:Regions.MainNavigation}" />
         <ContentControl x:Name="MainControl"
+                        Grid.Row="1"
                         Grid.Column="1"
-                        Margin="5 5 5 5"
                         prism:RegionManager.RegionName="{x:Static infrastructure:Regions.MainContent}" />
-        <StatusBar Grid.Row="1"
+        <StatusBar Grid.Row="2"
                    Grid.ColumnSpan="2"
                    HorizontalAlignment="Stretch">
             <WrapPanel>
-                <Button Content="Status bar" />
                 <TextBlock Margin="0 0 0 5"
                            HorizontalAlignment="Right"
                            Style="{StaticResource SubHeaderTextBlockStyle}"

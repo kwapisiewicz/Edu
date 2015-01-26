@@ -6,7 +6,5 @@
              d:DesignHeight="300"
              d:DesignWidth="300"
              mc:Ignorable="d">
-
-    <ListBox x:Name="Categories"
-             Height="400" />
+    <ListBox x:Name="Categories" />
 </UserControl>

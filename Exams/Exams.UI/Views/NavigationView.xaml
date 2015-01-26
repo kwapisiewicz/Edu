@@ -1,19 +1,21 @@
 ﻿<UserControl x:Class="Exams.UI.Views.NavigationView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             d:DesignHeight="300"
-             d:DesignWidth="300"
-             mc:Ignorable="d">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <StackPanel>
-        <TextBlock Margin="0 0 0 5"
-                   HorizontalAlignment="Center"
-                   Style="{StaticResource HeaderTextBlockStyle}"
-                   Text="Menu" />
-        <Button Command="{Binding NavigateCategories}"
+        <!--
+            <TextBlock Margin="0 0 0 5"
+            HorizontalAlignment="Center"
+            Style="{StaticResource HeaderTextBlockStyle}"
+            Text="Menu" />
+        -->
+        <Button Margin="5 0 10 10"
+                Command="{Binding NavigateCategories}"
+                Content="Home" />
+        <Button Margin="5 0 10 10"
+                Command="{Binding NavigateCategories}"
                 Content="Kategorie" />
-        <Button Command="{Binding NavigateQuestions}"
+        <Button Margin="5 0 10 10"
+                Command="{Binding NavigateQuestions}"
                 Content="Pytania" />
     </StackPanel>
 </UserControl>

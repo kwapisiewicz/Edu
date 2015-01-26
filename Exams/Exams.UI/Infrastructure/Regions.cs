@@ -11,5 +11,6 @@ namespace Exams.UI.Infrastructure
         public static string MainWindow = "MainWindow";
         public static string MainContent = "MainContent";
         public static string MainNavigation = "MainNavigation";
+        public static string MainToolbar = "MainToolbar";
     }
 }

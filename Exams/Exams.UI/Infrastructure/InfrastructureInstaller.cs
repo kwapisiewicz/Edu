@@ -1,5 +1,6 @@
 ﻿using Castle.MicroKernel.Registration;
 using Exams.UI.Context;
+using Exams.UI.PrismExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace Exams.UI.Infrastructure
                 .LifestyleSingleton());
             container.Register(Component.For<ODataClient>()
                 .LifestyleSingleton());
+            container.Register(Component.For<StackPanelRegionAdapter>());
         }
     }
 }

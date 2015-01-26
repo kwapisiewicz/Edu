@@ -35,7 +35,8 @@ namespace Exams.UI.Infrastructure
             //Starting regions registration
             _regionManager.RegisterViewWithRegion(Regions.MainWindow, typeof(LoginView));
             _regionManager.RegisterViewWithRegion(Regions.MainNavigation, typeof(NavigationView));
-            _regionManager.RegisterViewWithRegion(Regions.MainContent, typeof(CategoriesView));
+            //_regionManager.RegisterViewWithRegion(Regions.MainContent, typeof(StartPageView));
+            //_regionManager.RegisterViewWithRegion(Regions.MainContent, typeof(StartPageView));
 
             //View models
             _container.Register(Component.For<QuestionsViewModel>());

@@ -120,6 +120,7 @@
     <Compile Include="Infrastructure\MainWindsorInstaller.cs" />
     <Compile Include="LoginContext.cs" />
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="PrismExtensions\StackPanelRegionAdapter.cs" />
     <Compile Include="Views\CategoriesView.xaml.cs">
       <DependentUpon>CategoriesView.xaml</DependentUpon>
     </Compile>

@@ -1,4 +1,6 @@
-﻿using Microsoft.Practices.Prism.Modularity;
+﻿using Exams.UI.PrismExtensions;
+using Microsoft.Practices.Prism.Modularity;
+using Microsoft.Practices.Prism.Regions;
 using PrismContrib.WindsorExtensions;
 using System;
 using System.Collections.Generic;
@@ -6,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Exams.UI.Infrastructure
 {
@@ -45,6 +48,13 @@ namespace Exams.UI.Infrastructure
                 ModuleType = mainModuleType.AssemblyQualifiedName,
                 InitializationMode = InitializationMode.WhenAvailable
             });
+        }
+
+        protected override Microsoft.Practices.Prism.Regions.RegionAdapterMappings ConfigureRegionAdapterMappings()
+        {
+            RegionAdapterMappings mappings = base.ConfigureRegionAdapterMappings();
+            mappings.RegisterMapping(typeof(StackPanel), Container.Resolve<StackPanelRegionAdapter>());
+            return mappings;
         }
     }
 }
