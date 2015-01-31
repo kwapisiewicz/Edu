@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -50,5 +51,16 @@ namespace Exams.Host.Controllers
             return Created(category);
         }
 
+        public async Task<IHttpActionResult> Delete([FromODataUri] int key)
+        {
+            var category = await context.Categories.FindAsync(key);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            context.Categories.Remove(category);
+            await context.SaveChangesAsync();
+            return StatusCode(HttpStatusCode.NoContent);
+        }
     }
 }

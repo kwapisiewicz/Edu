@@ -24,31 +24,31 @@ namespace Exams.UI.Views
     /// </summary>
     public partial class CategoriesView : UserControl, INavigationAware
     {
-        ODataClient _client;
         IRegionManager _regionManager;
 
-        public CategoriesView(ODataClient client, IRegionManager regionManager)
+        public CategoriesViewModel ViewModel { get; set; }
+
+        public CategoriesView(CategoriesViewModel viewModel, IRegionManager regionManager)
         {
-            _client = client;
             _regionManager = regionManager;
+            ViewModel = viewModel;
+            DataContext = this.ViewModel;
             InitializeComponent();
-            try
-            {
-                var cats = _client.Context.Categories.ToArray().Select(a => a.Name);
-                Categories.ItemsSource = cats;
-            }
-            catch (Exception ex)
-            {
-                Console.Write(ex.ToString());
-            }
         }
 
         private void InitializeButtons()
-        {           
-            IRegion region = _regionManager.Regions[Regions.MainToolbar];            
-            region.Add(new Button() { Content = "Dodaj" });
-            region.Add(new Button() { Content = "Edytuj" });
-            region.Add(new Button() { Content = "Usun" });            
+        {
+            IRegion region = _regionManager.Regions[Regions.MainToolbar];
+            region.Add(new Button()
+            {
+                Content = "Dodaj",
+                Command = ViewModel.AddCategoryCommand
+            });
+            region.Add(new Button()
+            {
+                Content = "Usun",
+                Command = ViewModel.DeleteCategoryCommand
+            });
         }
 
         private void CleanButtons()

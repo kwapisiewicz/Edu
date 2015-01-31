@@ -41,6 +41,7 @@ namespace Exams.UI.Infrastructure
 
             //View models
             _container.Register(Component.For<QuestionsViewModel>());
+            _container.Register(Component.For<CategoriesViewModel>());            
         }
     }
 }

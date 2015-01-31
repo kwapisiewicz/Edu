@@ -6,5 +6,13 @@
              d:DesignHeight="300"
              d:DesignWidth="300"
              mc:Ignorable="d">
-    <ListBox x:Name="Categories" />
+    <ListBox x:Name="Categories"
+             ItemsSource="{Binding Categories}"
+             SelectedItem="{Binding SelectedCategory}">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding Name}" />
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
 </UserControl>
