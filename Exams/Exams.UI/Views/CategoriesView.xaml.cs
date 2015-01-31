@@ -45,9 +45,10 @@ namespace Exams.UI.Views
 
         private void InitializeButtons()
         {           
-            IRegion region = _regionManager.Regions[Regions.MainToolbar];
-            region.Add(new Button() { Content = "Siema1" });
-            region.Add(new Button() { Content = "Siema2" });
+            IRegion region = _regionManager.Regions[Regions.MainToolbar];            
+            region.Add(new Button() { Content = "Dodaj" });
+            region.Add(new Button() { Content = "Edytuj" });
+            region.Add(new Button() { Content = "Usun" });            
         }
 
         private void CleanButtons()

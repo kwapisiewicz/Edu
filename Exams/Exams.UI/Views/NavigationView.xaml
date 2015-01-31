@@ -9,7 +9,7 @@
             Text="Menu" />
         -->
         <Button Margin="5 0 10 10"
-                Command="{Binding NavigateCategories}"
+                Command="{Binding NavigateStartPage}"
                 Content="Home" />
         <Button Margin="5 0 10 10"
                 Command="{Binding NavigateCategories}"

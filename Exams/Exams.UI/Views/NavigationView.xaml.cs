@@ -27,14 +27,17 @@ namespace Exams.UI.Views
         {
             DataContext = this;
 
+            NavigateStartPage = new DelegateCommand(() =>
+regionManager.RequestNavigate(Regions.MainContent, typeof(StartPageView).FullName));
             NavigateCategories = new DelegateCommand(() =>
 regionManager.RequestNavigate(Regions.MainContent, typeof(CategoriesView).FullName));
             NavigateQuestions = new DelegateCommand(() =>
 regionManager.RequestNavigate(Regions.MainContent, typeof(QuestionsView).FullName));
-
+            
             InitializeComponent();
         }
 
+        public ICommand NavigateStartPage { get; set; }        
         public ICommand NavigateCategories { get; set; }
         public ICommand NavigateQuestions { get; set; }
     }
