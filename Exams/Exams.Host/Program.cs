@@ -2,8 +2,10 @@
 using Microsoft.Owin.Hosting;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
+using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,20 +15,28 @@ namespace Exams.Host
     {
         static void Main(string[] args)
         {
-            string baseAddress = "http://localhost:9000/";
-            HttpClient client = new HttpClient();
-
-            // Start OWIN host 
-            using (WebApp.Start<WebApiConfig>(url: baseAddress))
+            ExamsWindowsServiceDefinition srv = new ExamsWindowsServiceDefinition();
+            if (Environment.UserInteractive)
             {
-                // Create HttpCient and make a request to api/values 
-                ExecuteCall(client, baseAddress);
-                ExecuteCall(client, baseAddress + "Questions");
-                ExecuteCall(client, baseAddress + "Categories");
-                ExecuteCall(client, baseAddress + "Answers");
-
-                Console.ReadKey(); 
+                srv.Start();
+                TestReady();
+                Console.ReadKey();
+                srv.Stop();
             }
+            else
+            {
+                ServiceBase.Run(srv);
+            }
+        }
+
+        private static void TestReady()
+        {
+            string hostAddress = ConfigurationManager.AppSettings["HostAddress"]; ;
+            HttpClient client = new HttpClient();
+            ExecuteCall(client, hostAddress);
+            ExecuteCall(client, hostAddress + "Questions");
+            ExecuteCall(client, hostAddress + "Categories");
+            ExecuteCall(client, hostAddress + "Answers");
         }
 
         private static HttpResponseMessage ExecuteCall(HttpClient client, string address)
