@@ -4,14 +4,14 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Themes/Office2010Blue.MSControls.Core.Implicit.xaml" />
-                <ResourceDictionary Source="Themes/Office2010Blue.MSControls.Toolkit.Implicit.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Exams.UI.Style;component/Themes/Office2010Blue.MSControls.Core.Implicit.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Exams.UI.Style;component/Themes/Office2010Blue.MSControls.Toolkit.Implicit.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <BitmapImage x:Key="CorrectImg"
-                         UriSource="Images/correct.png" />
+                         UriSource="pack://application:,,,/Exams.UI.Style;component/Images/correct.png" />
             <BitmapImage x:Key="WrongImg"
-                         UriSource="Images/wrong.png" />
+                         UriSource="pack://application:,,,/Exams.UI.Style;component/Images/wrong.png" />
             <Style x:Key="HeaderTextBlockStyle"
                    TargetType="TextBlock">
                 <Setter Property="FontSize" Value="22" />

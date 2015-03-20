@@ -1,4 +1,7 @@
-﻿using Exams.UI.Infrastructure;
+﻿using Exams.UI.Core;
+using Exams.UI.Infrastructure;
+using Exams.UI.Teacher.Categories;
+using Exams.UI.Teacher.Questions;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Regions;
 using System;

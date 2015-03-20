@@ -1,5 +1,7 @@
-﻿using Exams.Model;
-using Exams.UI.Context;
+﻿using Exams.Core;
+using Exams.Model;
+using Exams.ODataClient.Context;
+using Exams.UI.Core;
 using Exams.UI.Infrastructure;
 using Exams.UI.Windows;
 using Microsoft.Practices.Prism.Commands;
@@ -28,9 +30,9 @@ namespace Exams.UI.Views
     {
         IRegionManager _regionManager;
         LoginContext _loginContext;
-        ODataClient _client;
+        Client _client;
 
-        public PasswordView(IRegionManager regionManager, LoginContext loginContext, ODataClient client)
+        public PasswordView(IRegionManager regionManager, LoginContext loginContext, Client client)
         {
             _regionManager = regionManager;
             _loginContext = loginContext;

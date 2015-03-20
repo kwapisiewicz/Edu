@@ -1,4 +1,7 @@
-﻿using Exams.UI.PrismExtensions;
+﻿using Exams.Core;
+using Exams.ODataClient;
+using Exams.UI.Core.PrismExtensions;
+using Exams.UI.Teacher;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
 using PrismContrib.WindsorExtensions;
@@ -30,13 +33,15 @@ namespace Exams.UI.Infrastructure
         protected override void ConfigureModuleCatalog()
         {
             RegisterModule(typeof(MainModule));
+            RegisterModule(typeof(TeacherModule));
         }
 
         protected override void ConfigureContainer()
         {
             base.Container.Install(
-                new InfrastructureInstaller(),
-                new MainWindsorInstaller());
+                new CoreInstaller(),
+                new ODataClientInstaller(),
+                new UIInstaller());
             base.ConfigureContainer();
         }
 
