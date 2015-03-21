@@ -96,10 +96,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Questions\AddQuestionView.xaml.cs">
+      <DependentUpon>AddQuestionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Questions\AddQuestionViewModel.cs" />
     <Compile Include="TeacherModule.cs" />
     <Page Include="Categories\CategoriesView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Questions\AddQuestionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Questions\QuestionsView.xaml">
       <Generator>MSBuild:Compile</Generator>

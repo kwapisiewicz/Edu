@@ -18,13 +18,13 @@ using System.Windows.Shapes;
 namespace Exams.UI.Teacher.Questions
 {
     /// <summary>
-    /// Interaction logic for QuestionsView.xaml
+    /// Interaction logic for AddQuestionView.xaml
     /// </summary>
-    public partial class QuestionsView : UserControl, INavigationAware
+    public partial class AddQuestionView : UserControl, INavigationAware
     {
         IRegionManager _regionManager;
 
-        public QuestionsView(QuestionsViewModel viewModel, IRegionManager regionManager)
+        public AddQuestionView(AddQuestionViewModel viewModel, IRegionManager regionManager)
         {
             _regionManager = regionManager;
             ViewModel = viewModel;
@@ -32,20 +32,15 @@ namespace Exams.UI.Teacher.Questions
             InitializeComponent();
         }
 
-        public QuestionsViewModel ViewModel { get; set; }
+        public AddQuestionViewModel ViewModel { get; set; }
 
         private void InitializeButtons()
         {
             IRegion region = _regionManager.Regions[Regions.MainToolbar];
             region.Add(new Button()
             {
-                Content = "Dodaj",
-                Command = ViewModel.AddCategoryCommand
-            });
-            region.Add(new Button()
-            {
-                Content = "Usuń",
-                Command = ViewModel.AddCategoryCommand
+                Content = "Zapisz",
+                Command = ViewModel.SaveCommand
             });
         }
 

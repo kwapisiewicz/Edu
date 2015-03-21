@@ -15,7 +15,7 @@ namespace Exams.UI.Teacher.Categories
 {
     public class CategoriesViewModel : BindableBase
     {
-        Client _client;
+        private Client _client;
 
         public ObservableCollection<Category> Categories { get; set; }
 

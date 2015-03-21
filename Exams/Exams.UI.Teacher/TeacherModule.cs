@@ -26,13 +26,14 @@ namespace Exams.UI.Teacher
         public void Initialize()
         {
             _container.Register(Component.For<CategoriesView>().Named(typeof(CategoriesView).FullName));
-            _container.Register(Component.For<QuestionsView>().Named(typeof(QuestionsView).FullName));            
-
+            _container.Register(Component.For<QuestionsView>().Named(typeof(QuestionsView).FullName));
+            _container.Register(Component.For<AddQuestionView>().Named(typeof(AddQuestionView).FullName));            
             //Starting regions registration
 
             //View models
-            _container.Register(Component.For<QuestionsViewModel>());
             _container.Register(Component.For<CategoriesViewModel>());            
+            _container.Register(Component.For<QuestionsViewModel>());
+            _container.Register(Component.For<AddQuestionViewModel>());   
         }
     }
 }

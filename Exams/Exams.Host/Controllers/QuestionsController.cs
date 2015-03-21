@@ -76,7 +76,7 @@ namespace Exams.Host.Controllers
             var relatedKey = ODataUri.GetKeyFromUri<int>(Request, link);
             switch (navigationProperty)
             {
-                case "Answer":
+                case "Answers":
                     var answer = context.Answers.SingleOrDefault(f => f.Id == relatedKey);
                     if (answer == null) return NotFound();
                     question.Answers.Add(answer);

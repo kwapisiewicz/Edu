@@ -70,7 +70,7 @@ namespace Exams.Host.Controllers
             var relatedKey = ODataUri.GetKeyFromUri<int>(Request, link);
             switch (navigationProperty)
             {
-                case "Answer":
+                case "Score":
                     var score = context.Scores.SingleOrDefault(f => f.Id == relatedKey);
                     if (answer == null) return NotFound();
                     answer.Score = score;

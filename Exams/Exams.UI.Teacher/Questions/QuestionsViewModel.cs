@@ -1,7 +1,10 @@
 ﻿using Exams.Model;
 using Exams.ODataClient.Context;
+using Exams.UI.Core;
 using Microsoft.OData.Client;
+using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
+using Microsoft.Practices.Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +16,11 @@ namespace Exams.UI.Teacher.Questions
     public class QuestionsViewModel : BindableBase
     {
         Client _client;
-        public QuestionsViewModel(Client client)
+        public QuestionsViewModel(Client client, IRegionManager regionManager)
         {
+            AddCategoryCommand = new DelegateCommand(() =>
+        regionManager.RequestNavigate(Regions.MainContent, typeof(AddQuestionView).FullName));
+
             _client = client;
             Questions = _client.Context
                 .Questions
@@ -23,7 +29,6 @@ namespace Exams.UI.Teacher.Questions
 
             foreach (var item in Questions.SelectMany(a=>a.Answers))
             {
-
                 client.Context.IgnoreResourceNotFoundException = true;
                 try
                 {
@@ -42,5 +47,8 @@ namespace Exams.UI.Teacher.Questions
         }
 
         public IEnumerable<Question> Questions { get; set; }
+
+        public DelegateCommand AddCategoryCommand { get; set; }
+        public DelegateCommand DeleteCategoryCommand { get; set; }
     }
 }

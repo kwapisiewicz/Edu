@@ -37,5 +37,16 @@ namespace Exams.Host.Controllers
                 .Where(p => p.Id == key);
             return SingleResult.Create(result);
         }
+
+        public async Task<IHttpActionResult> Post(Score score)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            context.Scores.Add(score);
+            await context.SaveChangesAsync();
+            return Created(score);
+        }
     }
 }
